@@ -24,10 +24,10 @@ export default class Drumpad extends React.Component{
         });
     }
     playSound(){
-        const sound = document.getElementById(this.props.keys)
+        const sound = document.getElementById(this.props.keys);
         sound.currentTime = 0;
         sound.volume = this.props.volume / 100;
-        sound.play();
+        this.props.isTurn ? sound.play() : '';
     }
     handleKeyDown(event){
         if(event.keyCode === this.props.code){

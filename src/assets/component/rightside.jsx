@@ -6,7 +6,7 @@ export default class Rightside extends React.Component{
     render(){
         return(
             <div id="right-side">
-                <div id="title"><img src="src/assets/image/Logo.png" alt="Logo" style={{width : 40, height : 40}}></img></div>
+                <div id="title"><img src="/Logo.png" alt="Logo" style={{width : 40, height : 40}}></img></div>
                 <div className="flex-container">
                     <p>Power</p>
                     <div className="toggle-container" style={this.props.isTurn ? {border : '5px solid red'} : {}}><div className={this.props.isTurn ? 'toggle active' : 'toggle'} onClick={this.props.turn}></div></div>
