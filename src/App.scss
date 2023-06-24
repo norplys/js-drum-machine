@@ -1,0 +1,110 @@
+
+
+$main-grey : #8d8d8d;
+$main-font : Russo One;
+$border-gray : rgba(150,150,150,1);
+@mixin flex-box ($just, $align, $direction : row){
+    display: flex;
+    justify-content: $just;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+}
+
+*{
+    margin: 0;
+    top: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+body{
+    
+    width: 100%;
+    min-height: 100vh;
+    background-color : $main-grey;
+    @include flex-box(center,center,);
+
+#drum-machine{
+    padding: 5px;
+    min-width: 660px;
+    min-height: 316px;
+    border: 5px solid darkgrey;
+    background-color: $main-grey;
+    display: flex;
+    overflow: hidden;
+    
+}
+
+}
+
+
+
+#drum-pad{
+    width: 100px;
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+
+    .shadow:hover{
+        box-shadow: 0px 0px 21px 1px rgba(255,255,255,0.72);
+    }
+
+    button{
+        border-radius: 10px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+        font-size: 20px;
+    }
+}
+
+#right-side{
+    flex: 1;
+    @include flex-box(space-around, center ,column);
+
+    img{
+        display: block;
+        border-radius: 50%;
+    }
+    .toggle-container{
+        position: relative;
+        border: 5px solid $border-gray;
+        width: 60px;
+        height: 20px;
+    }
+    .toggle{
+        position: absolute;
+        background-color: lightcyan;
+        width: 50%;
+        height: 100%;
+    }
+    #display {
+        @include flex-box(center,center);
+        border: 5px solid $border-gray;
+        width: 150px;
+        height: 45px;
+        background-color: darkgrey;
+    }
+    input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        margin-right: 15px;
+        height: 7px;
+        background: rgba(255, 255, 255, 0.6);
+        border: 1px solid white;
+        border-radius: 5px;
+        background-size: 70% 100%;
+        background-repeat: no-repeat;
+      }
+    #title{
+        width: 80%;
+        @include flex-box(flex-end,flex-end ,column )
+    }
+    .flex-container{
+        @include flex-box(center,center ,column )
+    }
+}
+
+.active{
+    transform: translateX(100%);
+}
